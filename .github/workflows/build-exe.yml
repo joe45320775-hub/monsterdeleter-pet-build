@@ -16,7 +16,7 @@ jobs:
       - name: Download source package
         shell: pwsh
         run: |
-          curl.exe -L --retry 5 --retry-delay 3 --max-time 900 -o src.zip "https://aka.doubaocdn.com/s/wFVMNEnPUx"
+          curl.exe -L --retry 5 --retry-delay 3 --max-time 900 -o src.zip "https://aka.doubaocdn.com/s/s0XCpg0EBr"
           if (!(Test-Path src.zip)) { throw "download failed" }
           Expand-Archive -Path src.zip -DestinationPath src -Force
           Get-ChildItem src | Select-Object Name
@@ -47,7 +47,7 @@ jobs:
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1.1.0-pet
-          name: MonsterDeleter desktop-pet v1.1.0
-          body: Pet walks on desktop / follows mouse / sleeps / full-screen wandering
+          tag_name: v1.2.0-pet
+          name: MonsterDeleter desktop-pet v1.2.0
+          body: fix pet-menu delete (file picker) + lying-down sleep pose
           files: src/dist/MonsterDeleter.exe
